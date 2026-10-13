@@ -162,9 +162,29 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Form Pertanyaan</h5>
+                    <h4>Form Pertanyaan</h4>
+
+                    @if (session('info'))
+                        <div class="alert alert-info">
+                            {!! session('info') !!}
+                        </div>
+                    @endif
 
                     <form action="{{ route('question.store') }}" method="POST">
                         @csrf
+                        ...
+                    </form>
+                    <form action="{{ route('question.store') }}" method="POST">
+                        @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
                             <input type="text" class="form-control" name="nama">

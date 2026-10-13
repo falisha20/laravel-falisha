@@ -15,7 +15,7 @@ class HomeController extends Controller
             'username'        => '2TIA Falisha',
             'last_login'      => date('Y-m-d H:i:s'),
             'list_pendidikan' => ['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3'],
-       ];
+        ];
         return view('home', $data);
     }
 
@@ -32,7 +32,6 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

@@ -15,3 +15,6 @@ Route::post('question/store', [QuestionController::class, 'store'])
 		->name('question.store');
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('question/store', [QuestionController::class, 'store'])->name('question.store');
